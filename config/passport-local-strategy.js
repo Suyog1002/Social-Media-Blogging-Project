@@ -13,7 +13,7 @@ passport.use(new LocalStrategy({
         User.findOne({email: email}).then(function(user,err){
             if(err){
                 console.log('Error in finding user --> Passport');
-                return done(err);
+                return done(err); //done function is callback function
             }
             //if user not found and password do not match 
             if(!user || user.password != password){

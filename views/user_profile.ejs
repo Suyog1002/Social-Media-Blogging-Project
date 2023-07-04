@@ -1,7 +1,16 @@
-<%- include('_header.ejs') %>
-<h1>
-    Codeial/Profile Page
-</h1>
-<p>Name: <%= user.name %></p>
-<p>Email: <%= user.email %></p>
-<!-- <a href="/users/sign-in">Sign Out</a> -->
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/db75def5cf.js" crossorigin="anonymous"></script>
+        <link href="css/user_profile.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <%- include('_header.ejs') %>
+        <h1>
+            Codeial/Profile Page
+        </h1>
+        <p>Name: <%= user.name %></p>
+        <p>Email: <%= user.email %></p>
+        <!-- <a href="/users/sign-in">Sign Out</a> -->
+    </body>
+</html>
+
