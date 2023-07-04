@@ -9,16 +9,16 @@ const session =require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
-const sassMiddleware=require('sass-middleware');
+// const sassMiddleware=require('sass-middleware');
 
-app.use(sassMiddleware({
-    src:'./assets/scss',
-    dest: './assets/css',
-    debug: true, //shows error in terminal mode
-    outputStyle: 'extended',
-    prefix: '/css' //where should my server lookout for css files
-})
-);
+// app.use(sassMiddleware({
+//     src:'./assets/scss',
+//     dest: './assets/css',
+//     debug: true, //shows error in terminal mode
+//     outputStyle: 'extended',
+//     prefix: '/css' //where should my server lookout for css files
+// })
+// );
 
 
 app.use(express.urlencoded());
