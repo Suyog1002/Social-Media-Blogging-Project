@@ -24,9 +24,9 @@ module.exports.create=function(req,res){
 }
 
 module.exports.destroy = function(req,res){
-    Comment.findById(req.params.id).then(function(comment,err){
+    Comment.findById(req.params.id).populate('post','user').then(function(comment,err){ //fetch the id of post user
         
-        if(comment.user==req.user.id ){   
+        if(comment.user==req.user.id || comment.post.user == req.user.id){   
             let postId=comment.post;                                      
             comment.deleteOne();
             Post.findByIdAndUpdate(postId,{$pull: {comments: req.params.id}}).then(function(post,err){
