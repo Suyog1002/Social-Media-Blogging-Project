@@ -4,17 +4,19 @@
             <%= "suyog" %>
         </title>
         <script src="https://kit.fontawesome.com/db75def5cf.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <link href="css/home.css" rel="stylesheet" type="text/css">
         <link href="../assets/css/header.css">
     </head>
     <body id="suyog">
         <!-- to include other file -->
         <%- include('_header.ejs') %> 
-        <% if(flash.success && flash.success.length >0) { %>
+        <!-- <% if(flash.success && flash.success.length >0) { %>
             <h3>
                 <%= flash.success %>
             </h3>
-        <% } %>  
+        <% } %>   -->
         <h1>Codeial / <%=title %></h1>
          
         <div id="home-container">
@@ -46,6 +48,27 @@
                 <% } %>
             </section>
         </div>
-        
+        <script>
+            // flash message for error msg
+            <% if(flash.success && flash.success.length >0) { %>
+                new Noty({
+                    theme: 'relax',
+                    text: "<%= flash.success %>",
+                    type: "success",
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %> 
+            // flash message for error msg
+            <% if(flash.error && flash.error.length >0) { %>
+                new Noty({
+                    theme: 'relax',
+                    text: "<%= flash.error %>",
+                    type: "error",
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %> 
+        </script>
     </body>
 </html>
