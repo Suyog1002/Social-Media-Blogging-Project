@@ -10,8 +10,15 @@
     <body id="suyog">
         <!-- to include other file -->
         <%- include('_header.ejs') %> 
+        <% if(flash.success && flash.success.length >0) { %>
+            <h3>
+                <%= flash.success %>
+            </h3>
+        <% } %>  
         <h1>Codeial / <%=title %></h1>
+         
         <div id="home-container">
+            
             <section id="feed-post">
                 <h4>Posts</h4>
                 <!-- authentication for creating a post -->
