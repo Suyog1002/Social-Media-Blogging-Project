@@ -1,0 +1,19 @@
+#suyog{
+    background-color:yellowgreen;
+}
+#home-container{
+    display: flex;
+    background-color:cornflowerblue;
+}
+#feed-post{
+    width: 70%;
+    padding: 10px;
+    background-color: aliceblue;
+}
+#user-friends{
+    width: 30%;
+    padding: 10px;
+    border-left: 1px solid lightgray;
+    height: 100%;
+    
+}
