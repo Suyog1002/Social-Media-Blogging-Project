@@ -1,6 +1,6 @@
 {
     //method to submit the form data for new post using AJAX
-       
+    let createPost =function(){   
        let newPostForm = $('#new-post-form');
 
        newPostForm.submit(function(e){
@@ -14,13 +14,13 @@
                 success: function(data){
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container>ul').prepend(newPost); //add the post in the list at front
-                    console.log(data);
+                    deletePost($(' .delete-post-button',newPost));
                 },error: function(error){
                     console.log(error.responseText);
                 }
             });
        });
-    
+    }
 
 
     //method to create a post in DOM
@@ -53,5 +53,23 @@
                     </div>
                 </li>`)  //backticks are used to interpolate the strings
     }
-    // createPost();
+    
+    //method to delete a post form DOM
+    let deletePost =function(deleteLink){
+        $(deleteLink).click(function(e){
+            e.preventDefault();
+            //block the naturally behaviour of delete link send it via ajax parallelly
+            $.ajax({
+                type: 'get',
+                url: $(deleteLink).prop('href'), //get the link of href in anchor tag
+                success: function(data){
+                    $(`#post-${data.data.post_id}`).remove();
+                },error: function(error){
+                    console.log(error.responseText);
+                }
+            })
+        })
+    }
+
+    createPost();
 }
