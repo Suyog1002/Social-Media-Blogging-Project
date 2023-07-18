@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport({
         user: 'suyogambadare1003@gmail.com',
         pass: 'ozfeurfmydlyslum'
     }
-});
+}); 
 
 let renderTemplate = (data,relativePath) => {
     let mailHTML;
