@@ -3,12 +3,14 @@
 }
 #home-container{
     display: flex;
-    background-color:cornflowerblue;
+    /* background-color:cornflowerblue; */
+    background-color: #7e70b5;
 }
 #feed-post{
     width: 70%;
     padding: 10px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-color: whitesmoke;
 }
 #user-friends{
     width: 30%;
