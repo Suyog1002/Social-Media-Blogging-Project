@@ -1,16 +1,27 @@
 <li id="post-<%= post._id %>">
     <p>
-     <!-- the user should be sign in and sign in user should be same as who created the post-->
-     <% if(locals.user && locals.user.id==post.user.id) {%>
-     <small>
-         <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">X</a>
-     </small>
-     <% } %>
-         <%= post.content %>
-         <br>
-         <small>
-             <%= post.user.name %>
-         </small>
+        <!-- the user should be sign in and sign in user should be same as who created the post-->
+        <% if(locals.user && locals.user.id==post.user.id) {%>
+        <small>
+            <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">X</a>
+        </small>
+        <% } %>
+        <%= post.content %>
+        <br>
+        <small>
+            <%= post.user.name %>
+        </small>
+        <!-- display the likes of this post, if the user is logged in, then show the link to toggle likes,else, just show the count -->
+        <br>
+        <small>
+            <% if(locals.user) { %> 
+                <a class="toggle-like-button" data-likes="<%=post.likes.length%>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
+                    <%=post.likes.length%> Likes 
+                </a>
+            <% }else{%>
+                <%=post.likes.length%>Likes
+            <%}%>    
+        </small>
     </p> 
     <div class="post-comments">
          <% if(locals.user) { %>
