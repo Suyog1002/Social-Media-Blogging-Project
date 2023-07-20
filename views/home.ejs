@@ -9,7 +9,6 @@
 
         <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
         <link href="css/home.css" rel="stylesheet" type="text/css">
-        <link href="css/chat-box.css" rel="stylesheet" type="text/css">
         <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
     </head>
     <body id="suyog">
@@ -84,5 +83,13 @@
                 let toggleLike = new ToggleLike(self);
             });
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"></script>
+        <script src="/js/chat_engine.js"></script>
+        <% if(locals.user){ %> 
+            <script>
+                new ChatEngine('user-chat-box','<%= locals.user._id%>')
+            </script>
+        <% } %>
+        
     </body>
 </html>
