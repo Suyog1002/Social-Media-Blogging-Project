@@ -20,7 +20,7 @@
                     // new PostComments(data.data.post._id);
 
                     //enable the functionality of the toggle like button on the new post
-                    new ToggleLike($('.toggle-like-button',newPost));
+                    new ToggleLike($('.toggle-like-button', newPost));
 
                     // new notify({
                     //     theme: 'relax',

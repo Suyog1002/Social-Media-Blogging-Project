@@ -1,6 +1,6 @@
 // create a class to toggle likes when a link is clicked, using Ajax
 class ToggleLike{
-    constructor(toogleElement){
+    constructor(toggleElement){
         this.toggler = toggleElement,
         this.toggleLike();
     }
@@ -21,11 +21,11 @@ class ToggleLike{
                 if(data.data.deleted == true){
                     likesCount -= 1;
                 }else{
-                    likesCount+=1;
+                    likesCount += 1;
                 }
 
                 $(self).attr('data-likes',likesCount);
-                $(self).html(`${likesCount}Likes`);
+                $(self).html(`${likesCount} Likes`);
             })
             .fail(function(errData){
                 console.log('error in completing the request');
