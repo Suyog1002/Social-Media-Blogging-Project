@@ -15,7 +15,6 @@ class ChatEngine{
         let self = this;
         
         this.socket.on('connect',function(){
-            console.log('suyog');
             console.log('Connection established using sockets...!');
 
             self.socket.emit('join_room',{
@@ -41,7 +40,7 @@ class ChatEngine{
             }
         });
         self.socket.on('receive_message',function(data){
-            console.log('message received',data.message);
+            // console.log('message received',data.message);
 
             let newMessage = $('<li>');
 
